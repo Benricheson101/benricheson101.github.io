@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="style.css">
+  <title>beans.</title>
+</head>
+<body>
+
+  <div class="container top">
+    <h1 class="title"><span class="bg" id="type"></span></h1>
+    <p class="description">
+      hi, my name is ben. i do code and uh, yes.
+      <br><span class="small">click buttons below to know more about me</span>
+    </p>
+    <div class="buttons">
+      <a href="about/index.html" class="link">more about me</a>&nbsp;|&nbsp;<a href="#" class="link">discord</a>
+    </div>
+  </div>
+  <script type="text/javascript">
+    let i=0;
+    const txt = 'hello'
+    const speed = 100;
+
+    function type () {
+      document.getElementById("type").innerHTML  += txt.charAt(i)
+        i++
+        setTimeout(type,speed)
+    }
+
+    setTimeout(type, speed)
+    // type()
+  </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="about.css">
+  <title>beans.</title>
+</head>
+<body>
+
+  <div class="container top">
+
+    <div class="image">
+      <img src="../ben.png">
+    </div>
+
+    <h1 class="title"><span class="bg" id="type"></span></h1>
+      <p id="name" class="description">
+        "ben" but in big letters will go here when i figure out how to do that
+      </p>
+      <!-- about me -->
+      <p id="aaa" class="description asterisk"><b>about me:</b></p>
+      <ul class="description dashed">
+        <li>obsessed with red pandas</li>
+        <li>i use arch btw</li>
+        <li>gaaaay</li>
+        <li>OwO</li>
+        <li>they/them</li>
+      </ul>
+      <!-- skills -->
+      <p id="aaa" class="description asterisk"><b>skills:</b></p>
+      <ul class="description dashed">
+        <li>javascript</li>
+        <li>typescript</li>
+        <li>rust (do i put this here cus i spent like 6+ months on it or not cus im bad at it)</li>
+        <li>mongodb</li>
+      </ul>
+      <!-- links -->
+      <p id="aaa" class="description asterisk"><b>find me:</b></p>
+      <ul class="description dashed">
+        <li><a href="">Ben!#0002 @ discord</a></li>
+        <li><a href="https://twitter.com/bbbbbeeeennnn">bbbbbeeeennnn @ twitter</a></li>
+        <li><a href="https://github.com/benricheson101">Benricheson101 @ github</a></li>
+      </ul>
+
+    <div class="buttons">
+      <a href="../index.html" class="link">homepage</a>&nbsp;|&nbsp;<a href="#" class="link">discord</a>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    let i = 0
+    const txt = 'about me'
+    const speed = 100
+
+    function type () {
+      document.getElementById("type").innerHTML  += txt.charAt(i)
+        i++
+        setTimeout(type, speed)
+    }
+    type()
+  </script>
+</body>
+</html>
