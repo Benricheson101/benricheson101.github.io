@@ -1,12 +1,12 @@
 
 /* basics */
-
+@import 'https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap';
 @import 'https://fonts.googleapis.com/css?family=VT323';
 
 :root {
-	--light-grey: #ECEFF4;
-	--grey: #D8DEE9;
-	--blue: #2E3440;
+  --light-grey: #ECEFF4;
+  --grey: #D8DEE9;
+  --blue: #2E3440;
   --font: 20px;
 }
 
@@ -22,7 +22,7 @@ body {
 }
 
 a {
-	color: inherit;
+  color: inherit;
 }
 
 b {
@@ -38,7 +38,7 @@ b {
 }
 
 .top {
-	padding-top: 5%;
+  padding-top: 5%;
 }
 
 .image {
@@ -48,8 +48,8 @@ b {
 }
 
 .image img {
-	width: 10em;
-	height: 10em;
+  width: 10em;
+  height: 10em;
   /* width: 10vw; */
   /* height: 10vw; */
   border-radius: 50%;
@@ -97,21 +97,26 @@ b {
   color: var(--blue);
 }
 
+.list-header {
+  margin: 0;
+}
+
 ul.dashed,
-p.asterisk {
-	padding: 0;
-	margin-top: 0;
+p.list-header {
+  padding: 0;
+  margin-top: 0;
   list-style-type: none;
 }
 
 ul.dashed > li:before {
-	content: '- ';
+  content: '- ';
 }
 
-p.asterisk:before {
-	content: '* '
+p.list-header:before {
+  content: '* '
 }
 
-#aaa {
-	margin: 0;
+#name {
+  font-size: 3rem;
+  margin: 0;
 }
