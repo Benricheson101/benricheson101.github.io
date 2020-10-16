@@ -7,6 +7,8 @@
   --light-grey: #ECEFF4;
   --grey: #D8DEE9;
   --blue: #2E3440;
+	--other-blue: #3B4252;
+	--light-blue: #88C0D0;
   --font: 20px;
 }
 
@@ -33,7 +35,7 @@ b {
 
 .container {
   width: 90%;
-  margin: 0 auto;
+	margin: 0 auto;
   max-width: 640px;
 }
 
@@ -85,16 +87,25 @@ b {
   font-size: 20px;
 }
 
-.link {
-  padding: 0 9px 2px 8px;
+.page-link {
+  padding: 0 9px 2px 9px;
   color: var(--grey);
   transition: 0.2s;
 }
 
+.link {
+  padding: 0 2px 2px 2px;
+  /* color: var(--grey); */
+	color: var(--light-blue);
+  transition: 0.2s;
+}
+
 .link:hover,
-.link:focus {
-  background: var(--grey);
-  color: var(--blue);
+.link:focus,
+.page-link:hover,
+.page-link:focus {
+	background: var(--grey);
+	color: var(--blue);
 }
 
 .list-header {
@@ -119,4 +130,24 @@ p.list-header:before {
 #name {
   font-size: 3rem;
   margin: 0;
+}
+
+/* collapse thingy */
+
+.collapsible-header {
+	cursor: pointer;
+}
+
+.collapsible-content {
+  margin: 5px;
+  padding: 10px;
+  background: var(--other-blue);
+}
+
+.collapsible-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.1s ease-out;
+
+  font-size: 20px;
 }

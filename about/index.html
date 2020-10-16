@@ -14,36 +14,69 @@
 
     <h1 class="title"><span class="bg" id="type"></span></h1>
     <p id="name" class="description"><b>ben!</b></p>
-      <!-- <p id="name" class="description"> -->
-      <!--   "ben" but in big letters will go here when i figure out how to do that -->
-      <!-- </p> -->
-      <!-- about me -->
+
       <p id="aaa" class="description list-header"><b>about me:</b></p>
+      <!-- about me -->
       <ul class="description dashed">
         <li>obsessed with red pandas</li>
-        <li>i use arch btw</li>
+        <li class="collapsible-header">i use arch btw</li>
+        <div class="collapsible-body">
+          <p class="collapsible-content">
+            you can find my dotfiles <a class="link" href="https://github.com/Benricheson101/dotfiles">here</a>
+          </p>
+        </div>
         <li>gaaaay</li>
-        <li>OwO</li>
-        <li>they/them</li>
+        <li class="collapsible-header">OwO</li>
+        <div class="collapsible-body">
+          <p class="collapsible-content">
+            &Ograve;w&Oacute;
+          </p>
+        </div>
+        <li class="collapsible-header">they/them</li>
+        <div class="collapsible-body">
+          <p class="collapsible-content">
+            my prefered pronouns are <a class="link" href="https://pronoun.is/they">they/them</a>
+          </p>
+        </div>
       </ul>
       <!-- skills -->
       <p class="description list-header"><b>skills:</b></p>
       <ul class="description dashed">
-        <li>javascript</li>
-        <li>typescript</li>
-        <li>rust (do i put this here cus i spent like 6+ months on it or not cus im bad at it)</li>
-        <li>mongodb</li>
+        <li class="collapsible-header">javascript</li>
+        <div class="collapsible-body">
+          <p class="collapsible-content">
+            i have about two years of javascript (specifically node.js) experience
+          </p>
+        </div>
+        <li class="collapsible-header">typescript</li>
+        <div class="collapsible-body">
+          <p class="collapsible-content">
+            i have been using typescript for onc year
+          </p>
+        </div>
+        <li class="collapsible-header">rust</li>
+        <div class="collapsible-body">
+          <p class="collapsible-content">
+            im bad lol but ive spent 6+ months learning it so ig its a skill or something
+          </p>
+        </div>
+        <li class="collapsible-header">mongodb</li>
+        <div class="collapsible-body">
+          <p class="collapsible-content">
+            i have about a year and a half of experience with mongodb
+          </p>
+        </div>
       </ul>
       <!-- links -->
       <p class="description list-header"><b>find me:</b></p>
       <ul class="description dashed">
-        <li><a href="../discord/index.html">ben!#0002 @ discord</a></li>
-        <li><a href="https://twitter.com/bbbbbeeeennnn">bbbbbeeeennnn @ twitter</a></li>
-        <li><a href="https://github.com/benricheson101">benricheson101 @ github</a></li>
+        <li><a class="link" href="../discord/index.html">ben!#0002 @ discord</a></li>
+        <li><a class="link" href="https://twitter.com/bbbbbeeeennnn">bbbbbeeeennnn @ twitter</a></li>
+        <li><a class="link" href="https://github.com/benricheson101">benricheson101 @ github</a></li>
       </ul>
 
     <div class="buttons">
-      <a href="/" class="link">homepage</a>&nbsp;|&nbsp;<a href="/discord" class="link">discord</a>
+      <a href="/" class="page-link">homepage</a>&nbsp;|&nbsp;<a href="/discord" class="page-link">discord</a>
     </div>
   </div>
 
@@ -57,7 +90,20 @@
         i++
         setTimeout(type, speed)
     }
-    type()
+
+    setTimeout(type, speed)
+
+    const listItems = document.querySelectorAll('li.collapsible-header')
+
+    for (const item of listItems) {
+      item.addEventListener('click', function () {
+        this.classList.toggle('active')
+        const content = this.nextElementSibling
+
+        if (content.style.maxHeight) content.style.maxHeight = null
+        else content.style.maxHeight = content.scrollHeight + 'px'
+      })
+    }
   </script>
 </body>
 </html>
