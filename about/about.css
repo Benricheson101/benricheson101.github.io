@@ -31,6 +31,10 @@ b {
   font-weight: 600;
 }
 
+p {
+	margin: 0;
+}
+
 /* html */
 
 .container {
@@ -52,8 +56,6 @@ b {
 .image img {
   width: 10em;
   height: 10em;
-  /* width: 10vw; */
-  /* height: 10vw; */
   border-radius: 50%;
 }
 
@@ -95,7 +97,6 @@ b {
 
 .link {
   padding: 0 2px 2px 2px;
-  /* color: var(--grey); */
 	color: var(--light-blue);
   transition: 0.2s;
 }
@@ -138,16 +139,16 @@ p.list-header:before {
 	cursor: pointer;
 }
 
-.collapsible-content {
-  margin: 5px;
-  padding: 10px;
-  background: var(--other-blue);
+.collapsible-body {
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.1s ease-out;
+
+	font-size: 20px;
 }
 
-.collapsible-body {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.1s ease-out;
-
-  font-size: 20px;
+.collapsible-content {
+	margin: 5px;
+	padding: 10px;
+	background: var(--other-blue);
 }
