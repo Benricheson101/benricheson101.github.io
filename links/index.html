@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="icon" href="../favicon.png">
+  <link rel="stylesheet" href="/styles/about.css">
+  <title>ben!</title>
+</head>
+<body>
+
+  <div class="container top">
+
+    <div class="image">
+      <img src="../ben.png">
+    </div>
+
+    <h1 class="title"><span class="bg" id="type"></span></h1>
+    <!-- <p id="name" class="description"><b>ben's links</b></p> -->
+
+      <!-- socials -->
+      <p class="description list-header"><b>socials:</b></p>
+      <ul class="description dashed">
+        <li><a class="link" href="/discord">ben!#0002 @ discord</a></li>
+        <li><a class="link" href="https://twitter.com/bbbbbeeeennnn">bbbbbeeeennnn @ twitter</a></li>
+        <li><a class="link" href="https://github.com/benricheson101">benricheson101 @ github</a></li>
+      </ul>
+      <!-- projects -->
+      <p class="description list-header"><b>projects:</b></p>
+      <ul class="description dashed">
+        <li><a class="link" href="https://github.com/Suggester/Suggester">[js] suggester</a></li>
+        <li><a class="link" href="https://github.com/Benricheson101/i18n">[js] i18n</a></li>
+        <li><a class="link" href="https://github.com/Benricheson101/discord-statuspage-v2">[ts] discord status webhook</a></li>
+        <li><a class="link" href="https://github.com/Benricheson101/brainfuck">[rs] brainfuck</a></li>
+        <li><a class="link" href="https://github.com/Benricheson101/tic-tac-toe-cpp">[c++] tic tac toe</a></li>
+        <li><a class="link" href="https://github.com/Benricheson101/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa">[*] aaa</a></li>
+      </ul>
+
+    <div class="buttons">
+      <a href="/" class="page-link">homepage</a>&nbsp;|&nbsp;<a href="/about" class="page-link">about me</a>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    let i = 0
+    const txt = 'links'
+    const speed = 100
+
+    function type () {
+      document.getElementById("type").innerHTML  += txt.charAt(i)
+        i++
+        setTimeout(type, speed)
+    }
+
+    setTimeout(type, speed)
+
+    const listItems = document.querySelectorAll('li.collapsible-header')
+
+    for (const item of listItems) {
+      item.addEventListener('click', function () {
+        this.classList.toggle('active')
+        const content = this.nextElementSibling
+
+        if (content.style.maxHeight) content.style.maxHeight = null
+        else content.style.maxHeight = content.scrollHeight + 'px'
+      })
+    }
+  </script>
+</body>
+</html>

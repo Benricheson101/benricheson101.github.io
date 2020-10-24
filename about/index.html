@@ -2,7 +2,7 @@
 <html>
 <head>
   <link rel="icon" href="../favicon.png">
-  <link rel="stylesheet" href="about.css">
+  <link rel="stylesheet" href="/styles/about.css">
   <title>ben!</title>
 </head>
 <body>
@@ -15,11 +15,17 @@
 
     <h1 class="title"><span class="bg" id="type"></span></h1>
     <p id="name" class="description"><b>ben!</b></p>
+    <span class="small">click the list items to learn more.</span>
 
       <p id="aaa" class="description list-header"><b>about me:</b></p>
       <!-- about me -->
       <ul class="description dashed">
-        <li>obsessed with red pandas</li>
+        <li class="collapsible-header">obsessed with red pandas</li>
+        <div class="collapsible-body">
+          <p class="collapsible-content">
+            i think its pretty obvious lol
+          </p>
+        </div>
         <li class="collapsible-header">i use arch btw</li>
         <div class="collapsible-body">
           <p class="collapsible-content">
@@ -35,13 +41,13 @@
         <li class="collapsible-header">OwO</li>
         <div class="collapsible-body">
           <p class="collapsible-content">
-            &Ograve;w&Oacute;<br>
+            &Ograve;w&Oacute;
           </p>
         </div>
-        <li class="collapsible-header">he/they</li>
+        <li class="collapsible-header">they/he</li>
         <div class="collapsible-body">
           <p class="collapsible-content">
-            <a class="link" href="https://pronoun.is/they">they/them</a> prefered but <a class="link" href="https://pronoun.is/he">he/him</a> is ok too ig
+            <a class="link" href="https://pronouns.me/they">they/them</a> prefered but <a class="link" href="https://pronouns.me/he">he/him</a> is ok too ig
           </p>
         </div>
       </ul>
@@ -60,12 +66,6 @@
             experience: 1 year
           </p>
         </div>
-        <li class="collapsible-header">rust</li>
-        <div class="collapsible-body">
-          <p class="collapsible-content">
-            experience: 6 months
-          </p>
-        </div>
         <li class="collapsible-header">bash/sh</li>
         <div class="collapsible-body">
           <p class="collapsible-content">
@@ -78,17 +78,11 @@
             experience: 1.5 years
           </p>
         </div>
-      </ul>
-      <!-- links -->
-      <p class="description list-header"><b>find me:</b></p>
-      <ul class="description dashed">
-        <li><a class="link" href="/discord">ben!#0002 @ discord</a></li>
-        <li><a class="link" href="https://twitter.com/bbbbbeeeennnn">bbbbbeeeennnn @ twitter</a></li>
-        <li><a class="link" href="https://github.com/benricheson101">benricheson101 @ github</a></li>
+        <li>learning: rust, c++, java</li>
       </ul>
 
     <div class="buttons">
-      <a href="/" class="page-link">homepage</a>&nbsp;|&nbsp;<a href="/discord" class="page-link">discord</a>
+      <a href="/" class="page-link">homepage</a>&nbsp;|&nbsp;<a href="/links" class="page-link">links</a>
     </div>
   </div>
 

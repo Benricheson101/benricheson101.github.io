@@ -20,6 +20,9 @@ body {
 }
 
 * {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
   text-decoration: none;
 }
 
@@ -81,6 +84,7 @@ p {
 .small {
   font-size: 20px;
   opacity: .6;
+  color: var(--light-grey);
 }
 
 .buttons {
