@@ -20,6 +20,7 @@
       <p id="aaa" class="description list-header"><b>about me:</b></p>
       <!-- about me -->
       <ul class="description dashed">
+        <li>16yo developer</li>
         <li class="collapsible-header">obsessed with red pandas</li>
         <div class="collapsible-body">
           <p class="collapsible-content">
@@ -92,18 +93,10 @@
     </div>
   </div>
 
-  <script type="text/javascript">
-    let i = 0
-    const txt = 'about me'
-    const speed = 100
+  <script type="module">
+    import { type } from '../util.js'
 
-    function type () {
-      document.getElementById("type").innerHTML  += txt.charAt(i)
-        i++
-        setTimeout(type, speed)
-    }
-
-    setTimeout(type, speed)
+    type('about me')
 
     const listItems = document.querySelectorAll('li.collapsible-header')
 

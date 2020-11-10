@@ -19,18 +19,10 @@
     </div>
   </div>
 
-  <script type="text/javascript">
-    let i=0;
-    const txt = 'hello'
-    const speed = 100;
+  <script type="module">
+    import { type } from './util.js'
 
-    function type () {
-      document.getElementById("type").innerHTML  += txt.charAt(i)
-        i++
-        setTimeout(type,speed)
-    }
-
-    setTimeout(type, speed)
+    type('hello')
   </script>
 </body>
 </html>
