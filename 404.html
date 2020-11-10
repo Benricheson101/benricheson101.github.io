@@ -10,7 +10,20 @@
     <div class="image">
       <img src="facepalm.jpg">
     </div>
-    <h1 style="text-align:center;">404 | This page doesn't exist!</h1>
+    <h1 class="title"><span class="bg" id="type"></span></h1>
   </div>
+  <script>
+    let i = 0
+    const txt = 'Error 404'
+    const speed = 100
+
+    function type () {
+      document.getElementById("type").innerHTML  += txt.charAt(i)
+        i++
+        setTimeout(type, speed)
+    }
+
+    setTimeout(type, speed)
+  </script>
 </body>
 </html>
