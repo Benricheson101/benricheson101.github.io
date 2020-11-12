@@ -17,6 +17,7 @@ body {
   margin: 0;
   font-family: 'VT323', monospace;
   background: var(--blue);
+  padding-bottom: 25px;
 }
 
 * {
