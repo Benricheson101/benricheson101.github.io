@@ -22,12 +22,27 @@
     <span class="small">click the list items to learn more.</span>
       <p class="description list-header"><b>commands:</b></p>
       <ul class="description dashed">
-        <li class="collapsible-header"><code class="cmd-usage">toggle</code></li>
+        <li class="collapsible-header"><code class="cmd-usage">publish</code></li>
         <div class="collapsible-body">
           <div class="collapsible-content">
-            <p><b>command:</b><code class="cmd-usage">@NSFW-Toggle toggle [channel]</code></p>
-            <p><b>description:</b> Toggle NSFW for a channel. Current channel or specified channel</p>
-            <p><b>alias:</b> <code class="cmd-usage">nsfw</code></p>
+            <p><b>command:</b><code class="cmd-usage">@Publisher publish [id|msg_url]</code></p>
+            <p><b>description:</b> Manually publish a message</p>
+            <p><b>alias:</b> <code class="cmd-usage">p</code></p>
+            <p><b>user permission:</b> <code class="cmd-usage">MANAGE_MESSAGES</code></p>
+            <p><b>bot permission:</b> <code class="cmd-usage">MANAGE_MESSAGES, SEND_MESSAGES</code></p>
+          </div>
+        </div>
+        <li class="collapsible-header"><code class="cmd-usage">authpublish</code></li>
+        <div class="collapsible-body">
+          <div class="collapsible-content">
+            <p><b>command:</b><code class="cmd-usage">@Publisher authpublish [add|remove [channel]]</code></p>
+            <p><b>description:</b> Edit channels on the authpublish list</p>
+            <p><b>info:</b> When you post a message in an autopublish channel, the bot will react with a reaction for 2 seconds:<br>
+              &#128227; - The message was successfully published<br>
+              &#9202; - The bot has already published 10 messages in the last hour<br>
+             	&#10071; - The message was already published
+            </p>
+            <p><b>alias:</b> <code class="cmd-usage">auto</code></p>
             <p><b>user permission:</b> <code class="cmd-usage">MANAGE_CHANNELS</code></p>
             <p><b>bot permission:</b> <code class="cmd-usage">MANAGE_CHANNELS</code></p>
           </div>
@@ -35,15 +50,16 @@
         <li class="collapsible-header"><code class="cmd-usage">help</code></li>
         <div class="collapsible-body">
           <div class="collapsible-content">
-            <p><b>command:</b><code class="cmd-usage">@NSFW-Toggle invite</code></p>
-            <p><b>description:</b> Invite the bot</p>
+            <p><b>command:</b><code class="cmd-usage">@Publisher help</code></p>
+            <p><b>alias:</b><code class="cmd-usage">h</code></p>
+            <p><b>description:</b> Get a list of commands</p>
             <p><b>permission:</b> Anyone can use this command</p>
           </div>
         </div>
         <li class="collapsible-header"><code class="cmd-usage">invite</code></li>
         <div class="collapsible-body">
           <div class="collapsible-content">
-            <p><b>command:</b><code class="cmd-usage">@NSFW-Toggle invite</code></p>
+            <p><b>command:</b><code class="cmd-usage">@Publisher invite</code></p>
             <p><b>description:</b> Invite the bot</p>
             <p><b>permission:</b> Anyone can use this command</p>
           </div>
@@ -51,7 +67,7 @@
         <li class="collapsible-header"><code class="cmd-usage">support</code></li>
         <div class="collapsible-body">
           <div class="collapsible-content">
-            <p><b>command:</b><code class="cmd-usage">@NSFW-Toggle support</code></p>
+            <p><b>command:</b><code class="cmd-usage">@Publisher support</code></p>
             <p><b>description:</b> Join the support server</p>
             <p><b>permission:</b> Anyone can use this command</p>
           </div>
@@ -59,7 +75,7 @@
       </ul>
 
     <div class="buttons">
-      <a href="/about" class="page-link">about me</a>&nbsp;|&nbsp;<a href="/homepage" class="page-link">homepage</a>&nbsp;|&nbsp;<a href="/links" class="page-link">links</a>
+      <a href="/about" class="page-link">about me</a>&nbsp;|&nbsp;<a href="/" class="page-link">homepage</a>&nbsp;|&nbsp;<a href="/links" class="page-link">links</a>
     </div>
   </div>
 
@@ -80,9 +96,9 @@
   <script type="module">
     import { type, getBotInfo } from '/util.js'
 
-    type('nsfw-toggle')
+    type('publisher')
 
-    getBotInfo('640605177690456064')
+    getBotInfo('739498075315241050')
       .then((res) => {
         document.getElementById('guildcount').innerHTML = res.serverCount.toLocaleString() || 'idk'
         document.getElementById('shardcount').innerHTML = res.shardCount.toLocaleString() || 'idk'
