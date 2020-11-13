@@ -100,8 +100,8 @@
 
     getBotInfo('739498075315241050')
       .then((res) => {
-        document.getElementById('guildcount').innerHTML = res.serverCount.toLocaleString() || 'idk'
-        document.getElementById('shardcount').innerHTML = res.shardCount.toLocaleString() || 'idk'
+        document.getElementById('guildcount').innerHTML = res.bot.serverCount.toLocaleString() || 'idk'
+        document.getElementById('shardcount').innerHTML = res.bot.shardCount.toLocaleString() || 'idk'
       })
   </script>
 </body>
