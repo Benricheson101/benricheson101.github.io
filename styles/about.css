@@ -1,6 +1,7 @@
 
 /* basics */
-@import 'https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap';
+/* @import 'https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap'; */
+@import 'https://fonts.googleapis.com/css2?family=Fira+Code';
 @import 'https://fonts.googleapis.com/css?family=VT323';
 
 :root {
@@ -9,6 +10,7 @@
   --blue: #2E3440;
 	--other-blue: #3B4252;
 	--light-blue: #88C0D0;
+  --purple: #B48EAD;
   --font: 20px;
 }
 
@@ -37,6 +39,28 @@ b {
 
 p {
 	margin: 0;
+}
+
+code {
+  font-family: 'Fira Code', monospace;
+  background: var(--other-blue);
+  /* padding: .15em; */
+  /* padding: 1px 1px 1px 1px; */
+  padding: 0px 5px;
+  font-size: 14px monospace;
+  border-radius: 5px;
+  /* border-radius: .15em; */
+}
+
+blockquote {
+  border-left: 5px solid #a0a4ac;
+  /* margin: 1.5em 10px; */
+  margin: .5em 10px;
+  padding: 0.5em 10px;
+}
+
+blockquote p {
+  display: inline;
 }
 
 /* html */
@@ -92,6 +116,7 @@ p {
   margin-top: 35px;
   text-align: center;
   font-size: 20px;
+  justify-content: center;
 }
 
 .page-link {
@@ -156,4 +181,61 @@ p.list-header:before {
 	margin: 5px;
 	padding: 10px;
 	background: var(--other-blue);
+  font-size: 20px;
+}
+
+/* bot stuff */
+.cmd-usage {
+  color: var(--purple);
+  font-size: 14px;
+}
+
+.cmd-desc {
+  font-size: 20px;
+}
+
+.commands {
+  color: var(--grey);
+  /* font-size: 20px; */
+}
+
+.info {
+  padding-left: 20px;
+}
+
+.info-bar {
+  padding: 0 9px 2px 9px;
+  color: var(--grey);
+}
+
+/* loading animation */
+.loading span {
+    opacity: 0;
+    -webkit-animation: loading-dot 1s infinite;
+    animation: loading-dot 1s infinite;
+}
+
+.loading span:nth-child(1) {
+    -webkit-animation-delay: 0.0s;
+    animation-delay: 0.0s;
+}
+.loading span:nth-child(2) {
+    -webkit-animation-delay: 0.1s;
+    animation-delay: 0.1s;
+}
+.loading span:nth-child(3) {
+    -webkit-animation-delay: 0.2s;
+    animation-delay: 0.2s;
+}
+
+@-webkit-keyframes loading-dot {
+      0% { opacity: 0; }
+     50% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+@keyframes loading-dot {
+      0% { opacity: 0; }
+     50% { opacity: 1; }
+    100% { opacity: 0; }
 }

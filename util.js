@@ -7,3 +7,15 @@ export function type (txt = '', speed = 100) {
   }
   setTimeout(typeEffect, speed)
 }
+
+export function getBotInfo(id) {
+  return fetch(`https://api.red-panda.red/del/guildcount/?id=${id}`)
+    .then((res) => res.json())
+
+  // return new Promise((resolve) => {
+  //   resolve({
+  //     serverCount: 123456,
+  //     shardCount: 7890
+  //   })
+  // })
+}

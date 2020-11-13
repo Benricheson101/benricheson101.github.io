@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="icon" href="/favicon.png">
+  <link rel="stylesheet" href="/styles/about.css">
+  <title>ben!</title>
+</head>
+<body>
+
+  <div class="container top">
+
+    <div class="image">
+      <img src="/ben.png">
+    </div>
+
+    <h1 class="title"><span class="bg" id="type"></span></h1>
+
+    <div class="buttons">
+      <span class="info-bar"><span id="guildcount"><span class="loading"><span>&#8226;</span><span>&#8226;</span><span>&#8226;</span></span></span> Servers</span>&nbsp;|&nbsp;<span class="info-bar"><span id="shardcount"><span class="loading"><span>&#8226;</span><span>&#8226;</span><span>&#8226;</span></span></span> Shards</span>&nbsp;|&nbsp;<a href="./invite" class="page-link">invite</a>&nbsp;|&nbsp;<a href="./privacy" class="page-link">privacy</a>
+    </div>
+
+    <span class="small">click the list items to learn more.</span>
+      <p class="description list-header"><b>commands:</b></p>
+      <ul class="description dashed">
+        <li class="collapsible-header"><code class="cmd-usage">toggle</code></li>
+        <div class="collapsible-body">
+          <div class="collapsible-content">
+            <p><b>command:</b><code class="cmd-usage">@NSFW-Toggle toggle [channel]</code></p>
+            <p><b>description:</b> Toggle NSFW for a channel. Current channel or specified channel</p>
+            <p><b>alias:</b> <code class="cmd-usage">nsfw</code></p>
+            <p><b>user permission:</b> <code class="cmd-usage">MANAGE_CHANNELS</code></p>
+            <p><b>bot permission:</b> <code class="cmd-usage">MANAGE_CHANNELS</code></p>
+          </div>
+        </div>
+        <li class="collapsible-header"><code class="cmd-usage">help</code></li>
+        <div class="collapsible-body">
+          <div class="collapsible-content">
+            <p><b>command:</b><code class="cmd-usage">@NSFW-Toggle invite</code></p>
+            <p><b>description:</b> Invite the bot</p>
+            <p><b>permission:</b> Anyone can use this command</p>
+          </div>
+        </div>
+        <li class="collapsible-header"><code class="cmd-usage">invite</code></li>
+        <div class="collapsible-body">
+          <div class="collapsible-content">
+            <p><b>command:</b><code class="cmd-usage">@NSFW-Toggle invite</code></p>
+            <p><b>description:</b> Invite the bot</p>
+            <p><b>permission:</b> Anyone can use this command</p>
+          </div>
+        </div>
+        <li class="collapsible-header"><code class="cmd-usage">support</code></li>
+        <div class="collapsible-body">
+          <div class="collapsible-content">
+            <p><b>command:</b><code class="cmd-usage">@NSFW-Toggle support</code></p>
+            <p><b>description:</b> Join the support server</p>
+            <p><b>permission:</b> Anyone can use this command</p>
+          </div>
+        </div>
+      </ul>
+
+    <div class="buttons">
+      <a href="/" class="page-link">homepage</a>&nbsp;|&nbsp;<a href="/links" class="page-link">links</a>
+    </div>
+  </div>
+
+  <script>
+    const listItems = document.querySelectorAll('.collapsible-header')
+
+    for (const item of listItems) {
+      item.addEventListener('click', function () {
+        this.classList.toggle('active')
+        const content = this.nextElementSibling
+
+        if (content.style.maxHeight) content.style.maxHeight = null
+        else content.style.maxHeight = content.scrollHeight + 'px'
+      })
+    }
+  </script>
+
+  <script type="module">
+    import { type, getBotInfo } from '/util.js'
+
+    type('nsfw-toggle')
+
+    getBotInfo('640605177690456064')
+      .then((res) => {
+        document.getElementById('guildcount').innerHTML = res.serverCount.toLocaleString() || 'idk'
+        document.getElementById('shardcount').innerHTML = res.shardCount.toLocaleString() || 'idk'
+      })
+  </script>
+</body>
+</html>

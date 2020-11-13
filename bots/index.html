@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="icon" href="../favicon.png">
+  <link rel="stylesheet" href="/styles/about.css">
+  <title>ben!</title>
+</head>
+<body>
+
+  <div class="container top">
+
+    <div class="image">
+      <img src="../ben.png">
+    </div>
+
+    <h1 class="title"><span class="bg" id="type"></span></h1>
+    <!-- <p id="name" class="description"><b>ben's links</b></p> -->
+
+      <!-- my bots -->
+      <p class="description list-header"><b>my stuff:</b></p>
+      <ul class="description dashed">
+        <li><a class="link" href="/bots/publisher">publisher</a></li>
+        <li><a class="link" href="/bots/nsfw-toggle">nsfw-toggle</a></li>
+      </ul>
+      <!-- stuff ive contributed to -->
+      <p class="description list-header"><b>cool stuff ive contributed to:</b></p>
+      <ul class="description dashed">
+        <li><a class="link" href="https://kettu.cc">kettu</a></li>
+      </ul>
+    <div class="buttons">
+      <a href="/" class="page-link">homepage</a>&nbsp;|&nbsp;<a href="/about" class="page-link">about me</a>
+    </div>
+  </div>
+
+  <script type="module">
+    import { type } from '../util.js'
+
+    type('links')
+
+    const listItems = document.querySelectorAll('li.collapsible-header')
+
+    for (const item of listItems) {
+      item.addEventListener('click', function () {
+        this.classList.toggle('active')
+        const content = this.nextElementSibling
+
+        if (content.style.maxHeight) content.style.maxHeight = null
+        else content.style.maxHeight = content.scrollHeight + 'px'
+      })
+    }
+  </script>
+</body>
+</html>
