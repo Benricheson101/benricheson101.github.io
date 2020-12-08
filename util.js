@@ -3,6 +3,11 @@ export function type (txt = '', speed = 100) {
   const typeEffect = () => {
     document.getElementById('type').innerHTML += txt.charAt(i)
     i++
+
+    if (i >= txt.length) {
+      return
+    }
+
     setTimeout(typeEffect, speed)
   }
   setTimeout(typeEffect, speed)
