@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="icon" href="/favicon.png">
+  <link rel="stylesheet" href="/styles/about.css">
+  <title>discord status</title>
+</head>
+<body>
+
+  <div class="container top">
+
+    <div class="image">
+      <img src="./discord-status.png">
+    </div>
+
+    <h1 class="title"><span class="bg" id="type"></span></h1>
+
+    <div class="buttons">
+      <a href="./invite" class="page-link">invite</a>&nbsp;|&nbsp;<a href="./privacy" class="page-link">privacy</a>
+    </div>
+
+    <span class="small">click the list items to learn more.</span>
+      <p class="description list-header"><b>commands:</b></p>
+      <ul class="description dashed">
+        <li class="collapsible-header"><code class="cmd-usage">status</code></li>
+        <div class="collapsible-body">
+          <div class="collapsible-content">
+            <p><b>command:</b><code class="cmd-usage">/status [summary|voice]</code></p>
+            <p><b>description:</b> Get the current status info from Discord's status page</p>
+            <p><b>permission:</b> Anyone can use this command</p>
+          </div>
+        </div>
+        <li class="collapsible-header"><code class="cmd-usage">config</code></li>
+        <div class="collapsible-body">
+          <div class="collapsible-content">
+            <p><b>command:</b><code class="cmd-usage">/config [get | mode &lt;post|edit&gt; | roles &lt;add|remove&gt; &lt;role&gt;] </code></p>
+            <p><b>description:</b> Change how the bot behaves in the server</p>
+            <p><b>user permission:</b> <code class="cmd-usage">MANAGE_WEBHOOKS</code></p>
+          </div>
+        </div>
+        <li class="collapsible-header"><code class="cmd-usage">unsubscribe</code></li>
+        <div class="collapsible-body">
+          <div class="collapsible-content">
+            <p><b>command:</b><code class="cmd-usage">/unsubscribe</code></p>
+            <p><b>description:</b> Unsubscribe from automatic status page update messages</p>
+            <p><b>user permission:</b> <code class="cmd-usage">MANAGE_WEBHOOKS</code></p>
+          </div>
+        </div>
+        <li class="collapsible-header"><code class="cmd-usage">invite</code></li>
+        <div class="collapsible-body">
+          <div class="collapsible-content">
+            <p><b>command:</b><code class="cmd-usage">/invite</code></p>
+            <p><b>description:</b> Invite the bot</p>
+            <p><b>permission:</b> Anyone can use this command</p>
+          </div>
+        </div>
+        <li class="collapsible-header"><code class="cmd-usage">support</code></li>
+        <div class="collapsible-body">
+          <div class="collapsible-content">
+            <p><b>command:</b><code class="cmd-usage">/support</code></p>
+            <p><b>description:</b> Join the support server</p>
+            <p><b>permission:</b> Anyone can use this command</p>
+          </div>
+        </div>
+      </ul>
+
+    <div class="buttons">
+      <a href="/about" class="page-link">about me</a>&nbsp;|&nbsp;<a href="/" class="page-link">homepage</a>&nbsp;|&nbsp;<a href="/links" class="page-link">links</a>
+    </div>
+  </div>
+
+  <script>
+    const listItems = document.querySelectorAll('.collapsible-header')
+
+    for (const item of listItems) {
+      item.addEventListener('click', function () {
+        this.classList.toggle('active')
+        const content = this.nextElementSibling
+
+        if (content.style.maxHeight) content.style.maxHeight = null
+        else content.style.maxHeight = content.scrollHeight + 'px'
+      })
+    }
+  </script>
+
+  <script type="module">
+    import { type } from '/util.js'
+
+    type('discord status')
+  </script>
+</body>
+</html>
