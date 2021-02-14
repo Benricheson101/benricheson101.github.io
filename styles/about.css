@@ -178,8 +178,8 @@ p.list-header:before {
 }
 
 .collapsible-content {
-	margin: 5px;
-	padding: 10px;
+  margin: 5px;
+  padding: 10px;
 	background: var(--other-blue);
   font-size: 20px;
 }
